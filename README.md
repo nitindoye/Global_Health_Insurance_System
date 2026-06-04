@@ -36,7 +36,3 @@ The solution ensures:
 ✔ Encryption of sensitive fields  
 ✔ Data quality checks  
 ✔ Audit & governance  
-
----
-
-## 🏗️ Architecture
