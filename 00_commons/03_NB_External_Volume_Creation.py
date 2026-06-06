@@ -30,25 +30,25 @@ if cur_workspaceUrl == dev_workspaceUrl:
   storageAccount = dev_storageAccount
   catalog_name = "global-pds-dev"
   schema_name = "globalbupa"
-  adls_root_path = f"s3://globalbupa-health-696645005482-ap-south-1-an/glob_health/"
+  root_path = f"s3://globalbupa-health-696645005482-ap-south-1-an/glob_health/"
 
 elif cur_workspaceUrl == qa_workspaceUrl:
   storageAccount = qa_storageAccount
   catalog_name = "global-pds-qa"
   schema_name = "globalbupa"
-  adls_root_path = f"abfss://globalbupa@{storageAccount}.dfs.core.windows.net"
+  root_path = f"abfss://globalbupa@{storageAccount}.dfs.core.windows.net"
 elif cur_workspaceUrl == prod_workspaceUrl:
   storageAccount = prod_storageAccount
   catalog_name = "globalbupa_prod"
   schema_name = "globalbupa"
-  adls_root_path = f"abfss://globalbupa@{storageAccount}.dfs.core.windows.net"
+  root_path = f"abfss://globalbupa@{storageAccount}.dfs.core.windows.net"
 else:
   raise ValueError(f"Unknown workspace: {cur_workspaceUrl}")
 
 print(f"Current workspace: {cur_workspaceUrl}")
 print(f"Storage account: {storageAccount}")
 print(f"Catalog name: {catalog_name}")
-print(f"ADLS root path: {adls_root_path}")
+print(f"root path: {root_path}")
 
 # COMMAND ----------
 
@@ -78,7 +78,7 @@ countries = [
 
 for country in countries:
     volume_name = f"globbupa_{country.lower()}"
-    external_path = f"{adls_root_path}/globalcountries/{country.lower()}"
+    external_path = f"{root_path}/globalcountries/{country.lower()}"
 
     spark.sql(f"""
               CREATE EXTERNAL VOLUME IF NOT EXISTS `{catalog_name}`.{schema_name}.{volume_name}
