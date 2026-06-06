@@ -70,3 +70,12 @@ print(f"s3 root path: {s3_root_path}")
 # MAGIC insert into `global-pds-dev`.bronze.file_ingestion_metadata values (
 # MAGIC     'policies_master','policies_master', '','Y');
 # MAGIC
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from `global-pds-dev`.bronze.file_ingestion_metadata
+
+# COMMAND ----------
+
+
