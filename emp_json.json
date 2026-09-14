@@ -1,0 +1,9 @@
+
+{
+  "emp_id":1001,
+  "name":"Nitin",
+  "department":{
+      "dept_id":10,
+      "dept_name":"Data Engineering"
+  }
+}
