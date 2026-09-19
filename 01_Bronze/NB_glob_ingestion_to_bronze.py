@@ -8,6 +8,7 @@ from pyspark.sql.functions import *
 from pyspark.sql import functions as F
 from datetime import datetime
 from pyspark.sql.types import *
+import json
 
 # COMMAND ----------
 
@@ -229,5 +230,4 @@ move_file(src_path, archive_path)
 
 
 # COMMAND ----------
-
 
